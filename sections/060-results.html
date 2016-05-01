@@ -1,6 +1,63 @@
     <section id="results" class="wrapper style1 fade-up">
         <div class="inner">
-            <h2> Results </h2>
-        </div>
+            <h2> Heading toward Cosmic4D. </h2>
+
+        <p>Recovering the cosmic initial condition with L-BFGS and Zel'dovich structure formation model.</p>
+
+        <section>
+            <div class="content">
+                <div class="inner">
+                <iframe width="854" height="480" src="https://www.youtube.com/embed/9amyXhWuyrc?vq=hd720" frameborder="0" allowfullscreen></iframe>
+                <p> The forward modeling dynamics that relates final and initial condition is Zel'dovich + Gaussian smoothing at 4 Mpc/h. 
+                    This simple dynamics mimic the behavior of linear biasing and halo scale smoothing. A small white noise is introduced to the data. 
+                    Even though the dynamics involves only one time step, it is already capturing the essence of the full non-linear problem of structure formation.
+                </p>
+                <p>We see as the L-BFGS iterations reduces chi square, the model agrees with the data at large scale (small k) in terms of power spectrum and high cross correlation. 
+        The initial condition is also recovered, but notice the a bias at intermediate scales (around k = 0.1). The residual has very low power, though slightly correlated with the data, an indicator of possible over-fitting. This is a topic that we are currently investigating.</p>
+
+                <ul> Four panels are:
+                <li> top left : Projection of the model at present day \( F(S) \)</li>
+                <li> top right : Projection of the model at initial condition \( S \)</li>
+                <li> bottom left : Variance of residual at present day \(\mathrm{VAR}(F(S) - F(D)) \) </li>
+                <li> bottom right : Variance of resitual at intial condition \(\mathrm{VAR}(S - D) \) </li>
+                </ul>
+                <ul>
+                Insets are :
+                <li>top :
+                        Reduced \( \chi^2 \) as a function of L-BFGS iteration. 
+                \[ \chi^2 = \frac{1}{N} \sum \frac{(F(S) - F(D))^2}{\sigma^2} \]
+
+                \( N \) N is the number of degrees of freedom. </li>
+                <li>bottom left : at present day, <br/>
+                        Red Solid : \( X[F(S), F(D)] \) <br/>
+                        Blue Solid : \( R[F(S), F(D)] \) <br/>
+                        Red Dotted:  \( X[F(S) - F(D), F(D)] \) <br/>
+                        Blue Dotted: \( R[F(S) - F(D), F(D)] \) <br/>
+                </li>
+                <li>bottom right: at inital condition, <br/>
+                        Red Solid : \( X[S, D] \)  <br/>
+                        Blue Solid : \( R[S, D] \)   <br/>
+                        Red Dotted:  \( X[S - D, D] \)   <br/>
+                        Blue Dotted: \( R[S - D, D] \)   <br/>
+                </li>
+                </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="content">
+            <div class='inner'>
+                <h3> Definitions </h3>
+                <p>
+                Cross correlation coefficient
+                    \[ X[A, B] = \frac{P_{A, B}}{\sqrt{P_{A} P_{B}}}. \]
+                </p>
+                <p>
+                Power spectrum recovery ratio
+                    \[ R[A, B] = \frac{P_{A}}{P_{B}}. \]
+                </p>
+            </div>
+            </div>
+        </section>
     </section>
 
