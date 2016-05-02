@@ -69,14 +69,15 @@
         <section>
             <div class="content">
                 <div class="inner">
-                    <h2>Limitation of observations</h2>
-                    <p>Observation has been the most intrumental tool for us to understand our Universe.
-                       There is a limitation, however.
+                    <h2>Power and limitation of data</h2>
+                    <p>Observational data has been the most intrumental tool for us to understand our Universe. Observational data
+                       sets are growing in size. Our current way of comprehending the observed data set is by model fitting 
+                       with theory over the 2 point statistics of observed data. The fitting approach has been extremely succesful.
+                       With this approach, however, it is hard to quantify the amount of information that has been encoded in the data.
                     </p>
-                    <p>Because the speed of light is finite and the universe is vast, when we observe the universe,
-                        we only see it at the time light is emitted from a distant past. 
-                       Given the relative short time-scale of the human activity comparing to the age of the universe,
-                       We will never be able to directly observe the evolution history of any give spatial position of the universe.
+                    <p>In addition, because the speed of light is finite and the universe is vast, when we observe the universe,
+                        we only see it at the time light is emitted from a distant past.
+                        To incorporate this finite light speed effect into simple fitting model is possible, but messy.
                         The following figure shows how the age of the observed universe increases as the distance to us increases.
                     </p>
                     <p><img class='image 4u' src="images/age-distance.png"/></p>
@@ -89,11 +90,19 @@
                     <p> Another example, one of the main sample of galaxies observed by the Sloan Digital Sky Survey, the CMASS sample, was a population of galaxies
                         2 Giga-parsec (6.76 billion light years) away, and at a time of 5.44 billion years ago.
                     </p>
-                    <p> Given that we can only see a slice of the universe at any given time, the question is then, how do we learn about the full history of the Universe,
-                        and how much can we learn about its past and future from these slices of information we have?
+                    <p>
+                        With Cosmo4D, we take a cleaner approach. We will define the model \( S \) at the time of the initial density flucutation
+                        in the Universe. A forward modelling dynamics \( F(S) \) relates the initial condition to the observed universe, where we define
+                        the goodness of the model with a plain \(\chi^2\). The full model includes 3 spatial dimensions and the evolution in time. 
+
+                        \[
+                            3 + 1 = 4.
+                        \]
+
+                        Cosmo4D is phyiscal cosmology in the lingo of machine learning.
                     </p>
                     <ul class="actions">
-                        <li><a href="#" class="button">Learn more</a></li>
+                        <li><a href="#machinelearning" class="button">Next</a></li>
                     </ul>
                 </div>
             </div>
