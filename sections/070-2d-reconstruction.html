@@ -1,0 +1,109 @@
+    <section id="results" class="wrapper style2 spotlights">
+        <div class="inner">
+            <h2> 2D Reconstruction: weak lensing </h2>
+	    <div class="content">
+		    <h2>Initial simulation</h2>
+		    <p>The initial density field is simulated from a given power spectrum. What we observe through weak lensing is not the density field directly, but rather two shear fields.</p>
+		    <div class = "row uniform">
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/data_clean.png" alt>
+				    </span>
+			    </div>
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/gamma1_clean.png" alt>
+				    </span>
+			    </div>
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/gamma2_clean.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <h2>Mask and noise</h2>
+		    <p>
+		    Parts of the sky are unobservable because of bright stars. Also, our observations are noisy. Here we show the mask and the noise. The noise level in this simulations varies across the sky as shown in the image below.
+		    </p>
+		    <div class = "row uniform">
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/mask.png" alt>
+				    </span>
+			    </div>
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/sigma_noise.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <h2>Observed shear (with mask and noise)</h2>
+		    <div class = "row uniform">
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/gamma1_noisy_masked.png" alt>
+				    </span>
+			    </div>
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/gamma2_noisy_masked.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <h2>Reconstructing the initial density field</h2>
+		    <p>The video below shows the iterations of the L-BFGS algorithm trying to find the best-fit initial density field</p>
+		    <div class = "row uniform">
+			    <div class="4u">
+				    <iframe width="360" height="360" src="https://www.youtube.com/embed/d2SGcVibPZI" frameborder="0" allowfullscreen></iframe>
+			    </div>
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/data_clean.png" alt>
+				    </span>
+			    </div>
+			    <div class="4u">
+				    <span class = "image fit">
+					    <img src = "images/lbfgs_solution.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <h2>L-BFGS convergence</h2>
+		    <div class = "row uniform">
+			    <div class="6u">
+				    <span class = "image fit">
+					    <img src = "images/chi2.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <h2>Power spectrum deficit</h2>
+		    <p>As we can see above the reconstructed density field matches the initial simulation very well. However, we can see that the structure on very small scales is missing in the reconstruction. That is because of noise. We can see the loss of power on small scales in the following plot of the <b>power spectrum</b>.</p>
+		    <div class = "row uniform">
+			    <div class="6u">
+				    <span class = "image fit">
+					    <img src = "images/power_spectrum_min.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <p>The green curve shows the original model from which the initial density field is simulated. The power of the simulated field is shown in red, and the power of the reconstructed field is shown in blue. As we can see, there is deficit of power for large \(k\), i.e. small scales. There is also loss of power for the largest scale (smallest \(k\)). This is because the weak lensing data is insensitive to the mean density field, so the reconstructed field will have zero mean.</p>
+		    </br>
+		    <h2>Power spectrum reconstruction</h2>
+		    <p>We reconstruct the missing power in two steps. First, we perform a few simulations of just noise and run the same optimization algorithm. This allows us to estimate the <b>noise bias</b>, i.e. how much of the reconstructed power comes from noise. Next, we perform simulations of the data, but we inject a small amount of extra power in one of the bins. We then run the same optimization method again. The reconstructed density field will have some extra power in some of the bins. This allows us to estimate the response of all the bins to a small change of initial power in a given bin. By repeating this step for all the bins we are able to reconstruct the full <b>Fisher matrix</b>. Using the Fisher matrix and the noise bias we can then get an estimate of the original power spectrum, including error bars.</p>
+		    <div class = "row uniform">
+			    <div class="6u">
+				    <span class = "image fit">
+					    <img src = "images/power_spectrum_reconstructed.png" alt>
+				    </span>
+			    </div>
+		    </div>
+		    </br>
+		    <p>The plot above shows the reconstructed power spectrum with the error bars in cyan. The agreement with the original model power spectrum (in green) is very good.
+	    </div>
+        </div>
+    </section>
+
