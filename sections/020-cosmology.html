@@ -23,7 +23,7 @@
                         and sheet-like structures of galaxies separated by enormous voids containing few galaxies. 
                         Structure formation attempts to model how these structures formed by gravitational instability of small early density ripples.
                     </p>
-                    <p> Here is a video that demonstrates this process. Structures, such as filaments and halos form as time evolves. The center of halos where the density is 
+                    <p> Below is a video that demonstrates this process. Structures (filaments and halos) form as time evolves. The center of halos where the density is 
                         highest, galaxies and super-massive black holes form and emit light that we can observe with telescopes. </p>
                     <iframe width="1280" height="720" src="https://www.youtube.com/embed/YjUICiYlCYE?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -50,10 +50,9 @@
                         gravity beyond generalitivity, and tensor modes in the primodial fluctation.
                     </p>
                     <p>The gravitional effect of dark energy drives the expansion of the universe.
-                       On this expanding background, the matter components (dark matter and baryon) collapse by gravity to form structures,
-                       halos and galaxies.
-                        The unique effect of baryons are secondary, consisting of hydrodynamics,
-                        radiation, atomic cooling, and feedback from stars and blackholes.
+                       On this expanding background, the matter component (dark matter and baryon) collapses by gravity to form structures,
+                       halos. Galaxies form in the center of halos, emitting light for us to observe. The effect of baryons are secondary,
+                        consisting of hydrodynamics, radiation, atomic cooling, and feedback from stars and blackholes.
                     </p>
                     <p>Advanced large scale parallel computer algorithms, most notably N-body simulations provides
                         fast and accurate predictions of the primary
@@ -84,14 +83,19 @@
                     </p>
                     <p><img class='image 8u' src="images/planck15-tt.png"/></p>
                     <p>
-                       With this approach, however, it is hard to quantify the amount of information that has been fully recovered from 
-                       the data. 
-                       In addition, because the speed of light is finite and the universe is vast, when we observe the universe,
-                       we only see it at the time light is emitted from a distant past.
-                       To incorporate this finite light speed effect into simple fitting model is possible, but messy.
-                       The following figure shows how the age of the observed universe increases as the distance to us increases.
+                       With this approach, however, it is hard to quantify the amount of information that has been fully recovered from
+                       the data. The data that goes into the fitting is heavily compressed into 2 point statistics, a 1 dimentional function.
+                       We do expect the loss of information due to this compression.
                     </p>
-                    <p><img class='image 6u center' src="images/age-distance.png"/></p>
+                    <p>
+                       In addition, because the speed of light is finite and the universe is vast, when we observe the universe,
+                       we only see it at the time light is emitted from a distant past.  To incorporate this finite light speed effect into simple fitting model is possible, but messy.
+                    </p>
+    <!--
+                    <p>
+                       The following figure shows how the age of the observed universe increases as the distance to us increases.
+<img class='image 6u center' src="images/age-distance.png"/></p>
+-->
                     <p>
                         For example, the Planck and WMAP satellites observed the cosmic
                         microwave background radiation in the universe at a distance of 14 Giga-parsec (45.5 billion light years) away,
@@ -104,10 +108,11 @@
                     <p>
                         With Cosmo4D, we take a cleaner approach. We will define the model \( S \) at the time of the initial density flucutation
                         in the Universe. A forward modelling dynamics \( F(S) \) relates the initial condition to the observed universe, where we define
-                        the goodness of the model with a plain \(\chi^2\). The full model includes 3 spatial dimensions and the evolution in time. 
+                        the goodness of the model with a plain \(\chi^2 \sim (F(S) - F(D))^2 \). The full model includes 3 spatial dimensions and the evolution in time.
 
+                        Hence
                         \[
-                            3 + 1 = 4.
+                            3 + 1 = 4,
                         \]
 
                         Cosmo4D is phyiscal cosmology in the lingo of machine learning.
