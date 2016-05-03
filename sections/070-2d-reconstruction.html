@@ -28,7 +28,7 @@
 		    </br>
 		    <h2>Mask and noise</h2>
 		    <p>
-		    Parts of the sky are unobservable because of bright stars. Also, our observations are noisy. Here we show the mask and the noise. The noise level in this simulations varies across the sky as shown in the image below.
+		    Parts of the sky are unobservable because of bright stars. Also, our observations are noisy. Here we show the mask and the noise. The yellow parts in the mask are parts of the sky where we don't have data because of a bright star. The noise level in this simulations varies across the sky as shown in the image below (the white parts have the largest amount of noise, whereas the green parts are the least noisy).
 		    </p>
 		    <div class = "row uniform">
 			    <div class="4u">
@@ -44,6 +44,7 @@
 		    </div>
 		    </br>
 		    <h2>Observed shear (with mask and noise)</h2>
+		    <p>The images below show the actual observed shear, including the noise. As we can see, in some parts the noise level is higher, which results in a more blurry image. Also, after adding noise we can still see the structure on the largest scales more or less clearly, but the small scale structure is completely washed out by noise.
 		    <div class = "row uniform">
 			    <div class="4u">
 				    <span class = "image fit">
@@ -58,7 +59,7 @@
 		    </div>
 		    </br>
 		    <h2>Reconstructing the initial density field</h2>
-		    <p>The video below shows the iterations of the L-BFGS algorithm trying to find the best-fit initial density field</p>
+		    <p>The video below (left) shows the iterations of the L-BFGS algorithm trying to find the best-fit initial density field. The image in the middle shows the original density field, and the image on the right shows the final reconstruction.</p>
 		    <div class = "row uniform">
 			    <div class="4u">
 				    <iframe width="385" height="385" src="https://www.youtube.com/embed/d2SGcVibPZI?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -73,6 +74,8 @@
 					    <img src = "images/lbfgs_solution.png" alt>
 				    </span>
 			    </div>
+			    </br>
+			    <p>We can see that the reconstructed field matches the original field very well. However, the match is not as good in the regions with high amount of noise and the masked regions, as expected.</p>
 		    </div>
 		    </br>
 		    <h2>L-BFGS convergence</h2>
