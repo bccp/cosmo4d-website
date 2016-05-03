@@ -2,16 +2,18 @@
         <div class="inner">
             <h2> Heading toward 3+1D </h2>
 
-            <p>In this section, we demonstrate reconstruction of the cosmic initial condition with L-BFGS 
+            <p>In this section, we demonstrate reconstruction of the cosmic initial condition with L-BFGS
                 and Zel'dovich structure formation model.</p>
             <ul>
                 <li>
                     Zel'Dovich approximation is the first order Lagrangian perturbative solution to the structure
-                    formation model. It is the simplest non-linear structure formation model under gravity that 
+                    formation model. It is the simplest non-linear structure formation model under gravity that
                     one can write down.
                 </li>
-                <li> We apply a Gaussian smoothing filter with a width of 4 Mpc/h. This simple dynamics mimic the behavior of linear biasing and halo scale smoothing. </li>
-                <li> The forward modeling theory for both the model and the data are the same, except a small white noise of amplitude is introduced to the data.
+                <li> We apply a Gaussian smoothing filter with a width of 4 Mpc/h.
+                    This simple dynamics mimic the behavior of linear biasing and halo scale smoothing. </li>
+                <li> The forward modeling theory for both the model and the data are the same,
+                    except a small white noise of amplitude \( \sigma \) is introduced to the data.
                 </li>
             </ul>
             <ul class="actions">
@@ -24,11 +26,11 @@
                 <div class='inner'>
                     <h2> Definitions </h2>
                     <p> We shall first define a few metrics that we will look into. </p>
-                    <p> The cost function </p>
+                    <p> The cost function (smaller is better) </p>
                         \[ \chi^2 = \sum \frac{(F(S) - F(D))^2}{\sigma^2} \]
-                    <p> Cross correlation coefficient </p>
+                    <p> Cross correlation coefficient (closer to 1 means higher correlation) </p>
                         \[ X[A, B] = \frac{P_{A, B}}{\sqrt{P_{A} P_{B}}}. \]
-                    <p> Power spectrum recovery ratio </p>
+                    <p> Power spectrum recovery ratio (closer to 1 means better recovery) </p>
                         \[ R[A, B] = \frac{P_{A}}{P_{B}}. \]
                 </div>
             </div>
@@ -47,14 +49,15 @@
                     the power spectrum recovery method in the cosmic shear example to unbias the power spectrum estimator.
                     The residual has very low power, though slightly correlated with the data, 
                     an indicator of possible over-fitting. This is a topic that we are currently investigating.</p>
-                <ul> Four panels are:
+                Four panels are:
+                <ul> 
                 <li> top left : Projection of the model at present day \( F(S) \)</li>
                 <li> top right : Projection of the model at initial condition \( S \)</li>
                 <li> bottom left : Variance of residual at present day \(\mathrm{VAR}(F(S) - F(D)) \) </li>
                 <li> bottom right : Variance of resitual at intial condition \(\mathrm{VAR}(S - D) \) </li>
                 </ul>
-                <ul>
                 Insets are :
+                <ul>
                 <li>top :
                         \( \chi^2 \) as a function of L-BFGS iteration. 
                 </li>
