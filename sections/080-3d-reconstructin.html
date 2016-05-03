@@ -4,6 +4,12 @@
 
             <p>In this section, we demonstrate reconstruction of the cosmic initial condition with L-BFGS
                 and Zel'dovich structure formation model.</p>
+
+            <p> The video demonstrates the iterations where L-BFGS finds the initial condition. We will explain
+                the details later. </p>
+
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/SqCzegQP5L8?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
             <ul>
                 <li>
                     Zel'Dovich approximation is the first order Lagrangian perturbative solution to the structure
@@ -25,7 +31,7 @@
             <div class="content">
                 <div class='inner'>
                     <h2> Definitions </h2>
-                    <p> We shall first define a few metrics that we will look into. </p>
+                    <p> Let's define a few metrics. These are shown in the video. </p>
                     <p> The cost function (smaller is better) </p>
                         \[ \chi^2 = \sum \frac{(F(S) - F(D))^2}{\sigma^2} \]
                     <p> Cross correlation coefficient (closer to 1 means higher correlation) </p>
@@ -38,8 +44,6 @@
         <section>
             <div class="content">
                 <div class="inner">
-                <h2> Animated L-BFGS Iterations </h2>
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/SqCzegQP5L8?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
                 <p>L-BFGS iterations successfully reduce \( \chi^2 \). This can be visually seen as the model converges.
                    to the data.
                     Very quickly (with &lt; 100 iterations),
