@@ -3,16 +3,19 @@
     <section id="machinelearning" class="wrapper style2 spotlights">
         <div class="inner">
             <h2>Large scale Machine Learning</h2>
-            <p> Machine learning with millions of degree of freedom. </p>
+	    <p>To fully describe the initial density of the observed Universe, we need a large number of variables - millions to billions. So our problem is essentially a machine learning problem in a very high dimensional parameter space. For such large scales optimization is typically performed with stochastic algorithms, such as <i>stochastic gradient descent</i>. However, for our problem, the full gradient of \(\chi^2\) can be calculated in the same computational time as the forward model. That allows us to use more efficient optimization algorithms, such as BFGS or L-BFGS.</p>
         </div>
         <section>
             <div class="content">
                 <div class="inner">
                     <h2>Optimization: L-BFGS</h2>
                     <img src="http://aria42.com/images/bfgs.png" width="70%" alt>
+		    </br>
                     <p>
                     The <b>BFGS</b> (Broyden, Fletcher, Goldfarb, Shanno) algorithm is a quasi-Newton algorithm for nonlinear optimization. By using the previous iterations it calculates an approximation to the inverse Hessian. However, storing all of the previous iterations can require a lot of memory (for millions or billions of dimensions). <b>L-BFGS</b> stands for "Limited memory BFGS", and stores only the last few iterations, but still works (almost) as well.
                     </p>
+		    <img src="https://reference.wolfram.com/language/tutorial/Files/UnconstrainedOptimizationQuasiNewtonMethods.en/1_tg.gif" alt><br>Credit: Wolfram Research
+		    </br>
                     <ul class="actions">
                         <li><a href="http://aria42.com/blog/2014/12/understanding-lbfgs" class="button" target = "_blank">Learn more</a></li>
                     </ul>
