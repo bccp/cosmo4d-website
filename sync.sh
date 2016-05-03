@@ -3,7 +3,7 @@
 # Requires s3cmd-1.6.1
 # Need to set up the S3 credential
 
-if [ "x$1" == --release ]; then
+if [ "x$1" == x--release ]; then
 target=s3://cosmo4d.org
 else
 target=s3://dev.cosmo4d.org
