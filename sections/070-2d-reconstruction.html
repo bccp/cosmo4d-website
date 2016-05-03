@@ -1,117 +1,100 @@
     <section id="results-2d" class="wrapper style2 spotlights">
-        <div class="inner">
+        <div class="content">
+            <div class="inner">
             <h2> 2D Reconstruction: weak lensing </h2>
-	    <p>As light from a distant star or galaxy is passing near a large amount of mass, such as a dark matter halo, its otherwise straight path gets changed by the gravitational field of the large mass. Therefore, the image that we observe becomes is a distorted version of the original. This effect is called <b>gravitational lensing</b>. The Hubble Space Telescope image below shows the distortion of the images of distant galaxies around a massive cluster of galaxies.</p>
-	    <img src = "http://hetdex.org/images/dark_energy/strong_lensing_slide36high.jpg" alt>
-	    <p>There are two types of lensing - strong and weak. Strong lensing refers to the case when the images are clearly distorted, and sometimes even multiple images of the distant galaxies are produced. The image above demonstrates strong lensing. Weak lensing, on the other hand, occurs when the light from the distant source passes further away from the large masses, or closer to not so large masses. The result is slight distortion in the image.</p>
-	    <p>This effect allows us to indirectly see dark matter (dark matter is dark by definition, so we cannot observe it directly). By using the shear data (which describes distortions of the original image) from a large number of sources one can reconstruct the dark matter density field. We show this with our simulations below.
-	    <div class="content">
-		    <h2>Initial simulation</h2>
-		    <p>The initial density field is simulated from a given power spectrum. What we observe through weak lensing is not the density field directly, but rather two shear fields. Shear 1 describes distortions in the horizontal and vertical directions, and shear two describes distortions in the diagonal directions.</p>
-		    <div class = "row uniform">
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/data_clean.png" alt>
-				    </span>
-			    </div>
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/gamma1_clean.png" alt>
-				    </span>
-			    </div>
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/gamma2_clean.png" alt>
-				    </span>
-			    </div>
-		    </div>
-		    </br>
-		    <h2>Mask and noise</h2>
-		    <p>
-		    Parts of the sky are unobservable because of bright stars. Also, our observations are noisy. Here we show the mask and the noise. The yellow parts in the mask are parts of the sky where we don't have data because of a bright star. The noise level in this simulations varies across the sky as shown in the image below (the white parts have the largest amount of noise, whereas the green parts are the least noisy).
-		    </p>
-		    <div class = "row uniform">
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/mask.png" alt>
-				    </span>
-			    </div>
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/sigma_noise.png" alt>
-				    </span>
-			    </div>
-		    </div>
-		    </br>
-		    <h2>Observed shear (with mask and noise)</h2>
-		    <p>The images below show the actual observed shear, including the noise. As we can see, in some parts the noise level is higher, which results in a more blurry image. Also, after adding noise we can still see the structure on the largest scales more or less clearly, but the small scale structure is completely washed out by noise.
-		    <div class = "row uniform">
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/gamma1_noisy_masked.png" alt>
-				    </span>
-			    </div>
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/gamma2_noisy_masked.png" alt>
-				    </span>
-			    </div>
-		    </div>
-		    </br>
-		    <h2>Reconstructing the initial density field</h2>
-		    <p>The video below (left) shows the iterations of the L-BFGS algorithm trying to find the best-fit initial density field. The image in the middle shows the original density field, and the image on the right shows the final reconstruction.</p>
-		    <div class = "row uniform">
-			    <div class="4u">
-				    <iframe width="385" height="385" src="https://www.youtube.com/embed/d2SGcVibPZI?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-			    </div>
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/data_clean.png" alt>
-				    </span>
-			    </div>
-			    <div class="4u">
-				    <span class = "image fit">
-					    <img src = "images/lbfgs_solution.png" alt>
-				    </span>
-			    </div>
-			    </br>
-			    <p>We can see that the reconstructed field matches the original field very well. However, the match is not as good in the regions with high amount of noise and the masked regions, as expected.</p>
-		    </div>
-		    </br>
-		    <h2>L-BFGS convergence</h2>
-		    <div class = "row uniform">
-			    <div class="6u">
-				    <span class = "image fit">
-					    <img src = "images/chi2.png" alt>
-				    </span>
-			    </div>
-		    </div>
-		    </br>
-		    <h2>Power spectrum deficit</h2>
-		    <p>As we can see above the reconstructed density field matches the initial simulation very well. However, we can see that the structure on very small scales is missing in the reconstruction. That is because of noise. We can see the loss of power on small scales in the following plot of the <b>power spectrum</b>, i.e. the two-point function.</p>
-		    <p align="center">\(<\delta(\mathbf{k})\delta(\mathbf{k^\prime})>=P(k)\delta_{\mathbf{kk^\prime}}\)</p>
-		    <div class = "row uniform">
-			    <div class="6u">
-				    <span class = "image fit">
-					    <img src = "images/power_spectrum_min.png" alt>
-				    </span>
-			    </div>
-		    </div>
-		    </br>
-		    <p>The green curve shows the original model from which the initial density field is simulated. The power of the simulated field is shown in red, and the power of the reconstructed field is shown in blue. As we can see, there is deficit of power for large \(k\), i.e. small scales. There is also loss of power for the largest scale (smallest \(k\)). This is because the weak lensing data is insensitive to the mean density field, so the reconstructed field will have zero mean.</p>
-		    </br>
-		    <h2>Power spectrum reconstruction</h2>
-		    <p>We reconstruct the missing power in two steps. First, we perform a few simulations of just noise and run the same optimization algorithm. This allows us to estimate the <b>noise bias</b>, i.e. how much of the reconstructed power comes from noise. Next, we perform simulations of the data, but we inject a small amount of extra power in one of the bins. We then run the same optimization method again. The reconstructed density field will have some extra power in some of the bins. This allows us to estimate the response of all the bins to a small change of initial power in a given bin. By repeating this step for all the bins we are able to reconstruct the full <b>Fisher matrix</b>. Using the Fisher matrix and the noise bias we can then get an estimate of the original power spectrum, including error bars.</p>
-		    <div class = "row uniform">
-			    <div class="6u">
-				    <span class = "image fit">
-					    <img src = "images/power_spectrum_reconstructed.png" alt>
-				    </span>
-			    </div>
-		    </div>
-		    </br>
-		    <p>The plot above shows the reconstructed power spectrum with the error bars in cyan. The agreement with the original model power spectrum (in green) is very good.
-	    </div>
+            <p>As light from a distant star or galaxy is passing near a large amount of mass, 
+                such as a dark matter halo, 
+                its otherwise straight path gets changed by the gravitational field of the large mass. 
+                Therefore, the image that we observe becomes is a distorted version of the original. 
+                This effect is called <b>gravitational lensing</b>. 
+                The Hubble Space Telescope image below shows the distortion of the images of distant galaxies 
+                around a massive cluster of galaxies.</p>
+                <img class="image 8u" src="http://hetdex.org/images/dark_energy/strong_lensing_slide36high.jpg" alt/>
+            <p>There are two types of lensing - strong and weak. 
+                Strong lensing refers to the case when the images are clearly distorted, 
+                and sometimes even multiple images of the distant galaxies are produced. 
+                The image above demonstrates strong lensing. Weak lensing, on the other hand, 
+                occurs when the light from the distant source passes further away from the large masses, 
+                or closer to not so large masses. The result is slight distortion in the image.</p>
+            <p>This effect allows us to indirectly see dark matter which does not interact with light and
+                therefore, cannot be observed by us directly.
+                By using the shear data that describes distortions of the original image 
+                from a large number of sources one can reconstruct the dark matter density field. 
+                We show this with our simulations below. </p>
+            </div>
         </div>
+        <section>
+            <div class="content"><div class="inner">
+                <h2>Initial simulation</h2>
+                <p>The initial density field is simulated from a given power spectrum. What we observe through weak lensing is not the density field directly, but rather two shear fields. Shear 1 describes distortions in the horizontal and vertical directions, and shear two describes distortions in the diagonal directions.</p>
+                <div class = "row uniform">
+                    <img class="4u image" src="images/data_clean.png" alt/>
+                    <img class="4u image" src="images/gamma1_clean.png" alt/>
+                    <img class="4u image" src="images/gamma2_clean.png" alt/>
+                </div>
+            </div></div>
+        </section>
+        <section>
+            <div class="content"><div class="inner">
+                <h2>Mask and noise</h2>
+                <p>
+                Parts of the sky are unobservable because of bright stars. Also, our observations are noisy. Here we show the mask and the noise. The yellow parts in the mask are parts of the sky where we don't have data because of a bright star. The noise level in this simulations varies across the sky as shown in the image below (the white parts have the largest amount of noise, whereas the green parts are the least noisy).
+                </p>
+                <div class = "row uniform">
+                    <img class="4u image" src="images/mask.png" alt/>
+                    <img class="4u image" src="images/sigma_noise.png" alt/>
+                </div>
+            </div></div>
+        </section>
+        <section>
+            <div class="content"><div class="inner">
+                <h2>Observed shear (with mask and noise)</h2>
+                <p>The images below show the actual observed shear, including the noise. As we can see, in some parts the noise level is higher, which results in a more blurry image. Also, after adding noise we can still see the structure on the largest scales more or less clearly, but the small scale structure is completely washed out by noise.
+                <div class = "row uniform">
+                    <img class="4u image" src="images/gamma1_noisy_masked.png" alt/>
+                    <img class="4u image" src="images/gamma2_noisy_masked.png" alt/>
+                </div>
+            </div></div>
+        </section>
+        <section>
+            <div class="content"><div class="inner">
+                <h2>Reconstructing the initial density field</h2>
+                <p>The video below (left) shows the iterations of the L-BFGS algorithm trying to find the best-fit initial density field. The image in the middle shows the original density field, and the image on the right shows the final reconstruction.</p>
+                <div class = "row uniform">
+                    <iframe width="271" height="271" src="https://www.youtube.com/embed/d2SGcVibPZI?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <img width="271" height="271" class="image" src="images/data_clean.png" alt/>
+                    <img width="271" height="271" class="image" src="images/lbfgs_solution.png" alt/>
+                </div>
+                <p>We can see that the reconstructed field matches the original field very well. However, the match is not as good in the regions with high amount of noise and the masked regions, as expected.</p>
+            </div></div>
+        </section>
+        <section>
+            <div class="content"><div class="inner">
+                <h2>L-BFGS convergence</h2>
+                <div class="row uniform">
+                    <img class="6u image" src="images/chi2.png" alt/>
+                </div>
+            </div></div>
+        </section>
+        <section>
+            <div class="content"><div class="inner">
+            <h2>Power spectrum deficit</h2>
+            <p>As we can see above the reconstructed density field matches the initial simulation very well. However, we can see that the structure on very small scales is missing in the reconstruction. That is because of noise. We can see the loss of power on small scales in the following plot of the <b>power spectrum</b>, i.e. the two-point function.</p>
+            <p align="center">\(<\delta(\mathbf{k})\delta(\mathbf{k^\prime})>=P(k)\delta_{\mathbf{kk^\prime}}\)</p>
+            <div class = "row uniform">
+                <img class="6u image" src="images/power_spectrum_min.png" alt/>
+            </div>
+            <p>The green curve shows the original model from which the initial density field is simulated. The power of the simulated field is shown in red, and the power of the reconstructed field is shown in blue. As we can see, there is deficit of power for large \(k\), i.e. small scales. There is also loss of power for the largest scale (smallest \(k\)). This is because the weak lensing data is insensitive to the mean density field, so the reconstructed field will have zero mean.</p>
+            </div></div>
+        </section>
+        <section>
+            <div class="content"><div class="inner">
+                <h2>Power spectrum reconstruction</h2>
+                <p>We reconstruct the missing power in two steps. First, we perform a few simulations of just noise and run the same optimization algorithm. This allows us to estimate the <b>noise bias</b>, i.e. how much of the reconstructed power comes from noise. Next, we perform simulations of the data, but we inject a small amount of extra power in one of the bins. We then run the same optimization method again. The reconstructed density field will have some extra power in some of the bins. This allows us to estimate the response of all the bins to a small change of initial power in a given bin. By repeating this step for all the bins we are able to reconstruct the full <b>Fisher matrix</b>. Using the Fisher matrix and the noise bias we can then get an estimate of the original power spectrum, including error bars.</p>
+                <div class = "row uniform">
+                    <img class="6u image" src="images/power_spectrum_reconstructed.png" alt/>
+                </div>
+                <p>The plot above shows the reconstructed power spectrum with the error bars in cyan. The agreement with the original model power spectrum (in green) is very good.
+            </div></div>
+        </section>
     </section>
-

@@ -3,22 +3,40 @@
     <section id="machinelearning" class="wrapper style2 spotlights">
         <div class="inner">
             <h2>Large scale Machine Learning</h2>
-	    <p>To fully describe the initial density of the observed Universe, we need a large number of variables - millions to billions. So our problem is essentially a machine learning problem in a very high dimensional parameter space. For such large scales optimization is typically performed with stochastic algorithms, such as <i>stochastic gradient descent</i>. However, for our problem, the full gradient of \(\chi^2\) can be calculated in the same computational time as the forward model. That allows us to use more efficient optimization algorithms, such as BFGS or L-BFGS.</p>
+            <p>To fully describe the initial density of the observed Universe, 
+                we need a large number of variables - millions to billions. 
+                So our problem is essentially a machine learning problem in a very high dimensional parameter space. 
+                For such large scales optimization is typically performed with stochastic algorithms, 
+                such as <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">stochastic gradient descent</a>.
+                However, for our problem, the full gradient of \( \chi^2 \) can be calculated in the same (or shorter)
+                computational time as the forward model.
+                This nice feature allows us to use more efficient optimization algorithms, such as BFGS or L-BFGS.
+            </p>
         </div>
         <section>
             <div class="content">
                 <div class="inner">
-                    <h2>Optimization: L-BFGS</h2>
-		    </br>
-		    <img src="http://aria42.com/images/bfgs.png" width="50%" alt>
+                    <h2>L-BFGS</h2>
+                    <img src="http://aria42.com/images/bfgs.png" class="6u" alt>
                     <p>
-                    The <b>BFGS</b> (Broyden, Fletcher, Goldfarb, Shanno) algorithm is a quasi-Newton algorithm for nonlinear optimization. By using the previous iterations it calculates an approximation to the inverse Hessian. However, storing all of the previous iterations can require a lot of memory (for millions or billions of dimensions). <b>L-BFGS</b> stands for "Limited memory BFGS", and stores only the last few iterations, but still works (almost) as well.
+                    The <b>BFGS</b> (Broyden, Fletcher, Goldfarb, Shanno) algorithm is a
+                    quasi-Newton algorithm for nonlinear optimization.
+                    By using the previous iterations it calculates an approximation to the inverse
+                    <a href="https://en.wikipedia.org/wiki/Hessian_matrix">Hessian matrix</a>.
+                    However, storing the state vector of all of the previous iterations can require a lot of memory
+                    (Keep in mind, decribing the inital condition of the universe requires millions or billions of dimensions).
+                    <b>L-BFGS</b> stands for "Limited memory BFGS" which stores only the state vector of last few iterations,
+                    but is mathematically shown to work almost as well as storing all of them.
                     </p>
-		    <p>The image below shows the iterations of L-BFGS.</p>
-		    <img src="https://reference.wolfram.com/language/tutorial/Files/UnconstrainedOptimizationQuasiNewtonMethods.en/1_tg.gif" alt><br>Credit: Wolfram Research
-		    </br>
+                    <p>To illustrate the algorithm, we borrow this image form Wolfram Research, 
+                    which shows the iterations of L-BFGS. We see that after each iteration the state vector is always moved towards 
+                    a local minima of the cost function. The direction of the motion is closely related to the derivative of the
+                    cost function.</p>
+                    <img class="8u" src="https://reference.wolfram.com/language/tutorial/Files/UnconstrainedOptimizationQuasiNewtonMethods.en/1_tg.gif" alt/>
                     <ul class="actions">
-                        <li><a href="http://aria42.com/blog/2014/12/understanding-lbfgs" class="button" target = "_blank">Learn more</a></li>
+                        <li><a href="http://aria42.com/blog/2014/12/understanding-lbfgs" class="button" target="_blank">
+                            Further Reading (Aria's Blog)</a>
+                        </li>
                     </ul>
                 </div>
             </div>

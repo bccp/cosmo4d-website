@@ -2,19 +2,55 @@
         <div class="inner">
             <h2> Heading toward 3+1D </h2>
 
-        <p>Recovering the cosmic initial condition with L-BFGS and Zel'dovich structure formation model.</p>
-
+            <p>In this section, we demonstrate reconstruction of the cosmic initial condition with L-BFGS 
+                and Zel'dovich structure formation model.</p>
+        <ul>
+            <li>
+                Zel'Dovich approximation is the first order Lagrangian perturbative solution to the structure
+                formation model. It is the simplest non-linear structure formation model under gravity that 
+                one can write down.
+            </li>
+            <li> We apply a Gaussian smoothing filter with a width of 4 Mpc/h. This simple dynamics mimic the behavior of linear biasing and halo scale smoothing. </li>
+            <li> The forward modeling theory for both the model and the data are the same, except a small white noise of amplitude \( \sigma \) is introduced to the data.
+            </li>
+        </p>
+        <ul class="actions">
+            <li><a href="http://arxiv.org/abs/1401.5466" class="button" 
+                target="_blank">Further Readings (Review on Zel'Dovich approximation by Martin White)</a></li>
+        </ul>
+        <section>
+            <div class="content">
+            <div class='inner'>
+                <h3> Definitions </h3>
+                <p> We shall first define a few metrics that we will look into. </p>
+                <p> The cost function 
+                    \[ \chi^2 = \sum \frac{(F(S) - F(D))^2}{\sigma^2} \]
+                </p>
+                <p>
+                Cross correlation coefficient
+                    \[ X[A, B] = \frac{P_{A, B}}{\sqrt{P_{A} P_{B}}}. \]
+                </p>
+                <p>
+                Power spectrum recovery ratio
+                    \[ R[A, B] = \frac{P_{A}}{P_{B}}. \]
+                </p>
+            </div>
+            </div>
+        </section>
         <section>
             <div class="content">
                 <div class="inner">
+                <h3> Animated L-BFGS Iterations </h3>
                 <iframe width="1280" height="720" src="https://www.youtube.com/embed/SqCzegQP5L8?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-                <p> The forward modeling dynamics that relates final and initial condition is Zel'dovich + Gaussian smoothing at 4 Mpc/h. 
-                    This simple dynamics mimic the behavior of linear biasing and halo scale smoothing. A small white noise is introduced to the data. 
-                    Even though the dynamics involves only one time step, it is already capturing the essence of the full non-linear problem of structure formation.
+                <p>L-BFGS iterations successfully reduce \( \chi^2 \). This can be visually seen as the model converges.
+                   to the data.
+                    Very quickly (with &lt; 100 iterations),
+                    the model already agrees with the data at large scale (small k).
                 </p>
-                <p>We see as the L-BFGS iterations reduces chi square, the model agrees with the data at large scale (small k) in terms of power spectrum and high cross correlation. 
-        The initial condition is also recovered, but notice the a bias at intermediate scales (around k = 0.1). The residual has very low power, though slightly correlated with the data, an indicator of possible over-fitting. This is a topic that we are currently investigating.</p>
-
+                <p> The initial condition is recovered, but the a bias at intermediate scales, indicating we need to use
+                    the power spectrum recovery method in the cosmic shear example to unbias the power spectrum estimator.
+                    The residual has very low power, though slightly correlated with the data, 
+                    an indicator of possible over-fitting. This is a topic that we are currently investigating.</p>
                 <ul> Four panels are:
                 <li> top left : Projection of the model at present day \( F(S) \)</li>
                 <li> top right : Projection of the model at initial condition \( S \)</li>
@@ -24,10 +60,8 @@
                 <ul>
                 Insets are :
                 <li>top :
-                        Reduced \( \chi^2 \) as a function of L-BFGS iteration. 
-                \[ \chi^2 = \frac{1}{N} \sum \frac{(F(S) - F(D))^2}{\sigma^2} \]
-
-                \( N \) N is the number of degrees of freedom. </li>
+                        \( \chi^2 \) as a function of L-BFGS iteration. 
+                </li>
                 <li>bottom left : at present day, <br/>
                         Red Solid : \( X[F(S), F(D)] \) <br/>
                         Blue Solid : \( R[F(S), F(D)] \) <br/>
@@ -42,21 +76,6 @@
                 </li>
                 </ul>
                 </div>
-            </div>
-        </section>
-        <section>
-            <div class="content">
-            <div class='inner'>
-                <h3> Definitions </h3>
-                <p>
-                Cross correlation coefficient
-                    \[ X[A, B] = \frac{P_{A, B}}{\sqrt{P_{A} P_{B}}}. \]
-                </p>
-                <p>
-                Power spectrum recovery ratio
-                    \[ R[A, B] = \frac{P_{A}}{P_{B}}. \]
-                </p>
-            </div>
             </div>
         </section>
     </section>

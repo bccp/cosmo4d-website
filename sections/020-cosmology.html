@@ -10,8 +10,11 @@
                side we have the theory of gravity and structure formation, on the other side, we have observational data. Physical cosmology bridges these two.
                <img src="images/physical-cosmology-larson.jpg"/>
             </p>
+            <ul class="actions">
+                <li><a href="https://en.wikipedia.org/wiki/Physical_cosmology" class="button" target="_blank">Further Readings (Wikipedia)</a></li>
+            </ul>
         </div>
-
+        
         <section>
             <div class="content">
                 <div class="inner">
@@ -26,6 +29,10 @@
                     <p> Below is a video that demonstrates this process. Structures (filaments and halos) form as time evolves. The center of halos where the density is 
                         highest, galaxies and super-massive black holes form and emit light that we can observe with telescopes. </p>
                     <iframe width="1280" height="720" src="https://www.youtube.com/embed/YjUICiYlCYE?vq=auto&amp;rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <ul class="actions">
+                        <li><a href="https://en.wikipedia.org/wiki/Observable_universe#Large-scale_structure" 
+                               class="button" target="_blank">Further Readings (Wikipedia)</a></li>
+                    </ul>
                 </div>
         </section>
 
@@ -64,7 +71,8 @@
                         to the level of uncertainties from observations.
                     </p>
                     <ul class="actions">
-                        <li><a href="#" class="button">Learn more</a></li>
+                        <li><a href="http://arxiv.org/abs/1505.02821" 
+                               class="button" target="_blank">Further Reading (Review by Joel R. Primack)</a></li>
                     </ul>
                 </div>
             </div>
@@ -79,7 +87,7 @@
                        over the 2 point statistics of observed data. The existing approach has been extremely succesful. For example,
                        The following figure shows the best fit model of the cosmic microwave background power spectrum against
                        data measured from the Planck satellite. The uncertainty in data is very small, and the agreement between model
-                       and data is very small too.
+                       and data is very high.
                     </p>
                     <p><img class='image 8u' src="images/planck15-tt.png"/></p>
                     <p>
@@ -89,22 +97,20 @@
                     </p>
                     <p>
                        In addition, because the speed of light is finite and the universe is vast, when we observe the universe,
-                       we only see it at the time light is emitted from a distant past.  To incorporate this finite light speed effect into simple fitting model is possible, but messy.
-                    </p>
-    <!--
-                    <p>
+                       we only see it at the time light is emitted from a distant past.  
                        The following figure shows how the age of the observed universe increases as the distance to us increases.
-<img class='image 6u center' src="images/age-distance.png"/></p>
--->
+                       <img class='image 6u center' src="images/age-distance.png"/>
+                    </p>
                     <p>
-                        For example, the Planck and WMAP satellites observed the cosmic
+                        As an example, the Planck and WMAP satellites observed the cosmic
                         microwave background radiation in the universe at a distance of 14 Giga-parsec (45.5 billion light years) away,
                         and at a time of 13.7 billion years ago. The light appears to be travelling faster because light travels as
                         the universe expands, an effect due to General Relativity.
-                    </p>
-                    <p> Another example, one of the main sample of galaxies observed by the Sloan Digital Sky Survey, the CMASS sample, was a population of galaxies
+                        As another example, one of the main sample of galaxies observed by the Sloan Digital Sky Survey, the CMASS sample, was a population of galaxies
                         2 Giga-parsec (6.76 billion light years) away, and at a time of 5.44 billion years ago.
                     </p>
+                    <p> It is also slightly messy to directly include the difference of structure at different distance
+                        in the model.</p>
                     <p>
                         With Cosmo4D, we take a cleaner approach. We will define the model \( S \) at the time of the initial density flucutation
                         in the Universe. A forward modelling dynamics \( F(S) \) relates the initial condition to the observed universe, where we define
@@ -115,8 +121,15 @@
                             3 + 1 = 4,
                         \]
 
-                        Cosmo4D is phyiscal cosmology in the lingo of machine learning.
+                        Cosmo4D is phyiscal cosmology in the lingo of machine learning. 
                     </p>
+                    <p> We are actively developing the method. In this demo, we will show two examples:
+                    </p>
+                    <ul>
+                        <li> Reconstruction of Density from Cosmic Shear (2-D spatial + 1-D time + Linear dynamics) </li>
+                        <li> Reconstruction of Dark Matter Initial Condition (3-D spatial + 1-D time + Non-Linear dynamics) </li>
+                    </ul>
+                    <p> But first, let's take a look at the L-BFGS optimization algorithm that formed the backbone of Cosmo4D.</p>
                     <ul class="actions">
                         <li><a href="#machinelearning" class="button">Next</a></li>
                     </ul>
